@@ -54,7 +54,7 @@ const Header = () => {
                   Home
                 </a>
               </Link>
-              <Link href="/">
+              <Link href="/#AboutMe">
                 <a
                   className={aboutMe ? classes.linkSelect : classes.link}
                   onMouseEnter={() => setAboutMe(true)}

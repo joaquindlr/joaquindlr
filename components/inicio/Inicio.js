@@ -1,6 +1,7 @@
 import Styles from "./InicioStyles";
 import Header from "../header";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Link from "next/link";
 
 import { useEffect } from "react";
 
@@ -35,7 +36,7 @@ const Body = () => {
           </div>
         </div>
       </div>
-      <div className={classes.fondoSegundo}>
+      <div id="AboutMe" className={classes.fondoSegundo}>
         <div>
           <div className={classes.contenedorNegro1}>
             <p className={classes.textoContenedores}>
