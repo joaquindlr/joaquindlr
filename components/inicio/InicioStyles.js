@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
   },
   fondoSegundo: {
     background: "linear-gradient(180deg, #E27D6B 0%, #E4713E 100%)",
-    height: "100vh",
+    minHeight: "100vh",
     display: "grid",
     placeItems: "center",
     [theme.breakpoints.up("lg")]: {
@@ -22,12 +22,23 @@ export default makeStyles((theme) => ({
       paddingLeft: "25%",
       paddingRight: "25%",
     },
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: "10%",
+      paddingRight: "10%",
+    },
   },
   presentacion: {
     color: "white",
     fontWeight: 700,
     fontSize: "2.5rem",
     marginRight: "20%",
+  },
+  presentacionPhone: {
+    color: "white",
+    fontWeight: 700,
+    fontSize: "2.2rem",
+    marginLeft: "2rem",
+    marginRight: "2rem",
   },
   contenedorNegro1: {
     magin: 0,
@@ -42,6 +53,15 @@ export default makeStyles((theme) => ({
     backgroundColor: "#474555",
     borderRadius: 25,
     boxShadow: "-9px 10px 3px -2px rgba(0, 0, 0, 0.4)",
+  },
+  contenedorNegro2Phone: {
+    margin: 0,
+    backgroundColor: "#474555",
+    borderRadius: 25,
+    boxShadow: "-9px 10px 3px -2px rgba(0, 0, 0, 0.4)",
+    marginRight: "1rem",
+    marginLeft: "1rem",
+    marginBottom: "2rem",
   },
   textoContenedores: {
     margin: 0,

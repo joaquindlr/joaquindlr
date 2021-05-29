@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 const Body = () => {
   const classes = Styles({});
-  const matches = useMediaQuery("(min-width:1400px)");
+  const matches = useMediaQuery("(min-width:768px)");
 
   useEffect(() => {
     console.log("aa", matches);
@@ -17,28 +17,56 @@ const Body = () => {
     <div>
       <div className={classes.fondoPrincipal}>
         <Header />
-        <div style={{ display: "flex" }}>
+        <div style={matches ? { display: "flex" } : null}>
           <div
-            style={{
-              width: "50%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              justifyItems: "center",
-            }}
+            style={
+              matches
+                ? {
+                    width: "50%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    justifyItems: "center",
+                  }
+                : { textAlign: "center" }
+            }
           >
-            <h1 className={classes.presentacion}>
-              Hola! Me llamo Joaquin y soy desarrollador web full stack
+            <h1
+              className={
+                matches ? classes.presentacion : classes.presentacionPhone
+              }
+            >
+              Hola! Me llamo Joaquin y soy desarrollador web front end
             </h1>
           </div>
-          <div style={{ width: "50%" }}>
-            <img src="/img/hero2.e4960f19.svg" />
+          <div
+            style={
+              matches
+                ? { width: "50%" }
+                : {
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }
+            }
+          >
+            <img
+              style={!matches ? { width: "80%" } : null}
+              src="/img/hero2.e4960f19.svg"
+            />
           </div>
         </div>
       </div>
       <div id="AboutMe" className={classes.fondoSegundo}>
         <div>
-          <div className={classes.contenedorNegro1}>
+          <div
+            className={classes.contenedorNegro1}
+            style={
+              !matches
+                ? { marginTop: "2rem", marginLeft: "1rem", marginRight: "1rem" }
+                : null
+            }
+          >
             <p className={classes.textoContenedores}>
               Mi nombre es Joaquin de los Reyes, tengo 22 años y soy un
               estudiante de Ingenieria en Sistemas de Informacion con muchas
@@ -46,10 +74,14 @@ const Body = () => {
               paginas y aplicaciones web.
             </p>
           </div>
-          <div style={{ display: "flex" }}>
+          <div style={matches ? { display: "flex" } : null}>
             <div
-              className={classes.contenedorNegro2}
-              style={{ marginRight: "0.5rem" }}
+              className={
+                matches
+                  ? classes.contenedorNegro2
+                  : classes.contenedorNegro2Phone
+              }
+              style={matches ? { marginRight: "0.5rem" } : null}
             >
               <h3 className={classes.textoTitulo}>Front end developer</h3>
               <p className={classes.textoContenedores2}>
@@ -59,11 +91,15 @@ const Body = () => {
               </p>
             </div>
             <div
-              className={classes.contenedorNegro2}
-              style={{ marginLeft: "0.5rem" }}
+              className={
+                matches
+                  ? classes.contenedorNegro2
+                  : classes.contenedorNegro2Phone
+              }
+              style={matches ? { marginLeft: "0.5rem" } : null}
             >
               <div>
-                <h3 className={classes.textoTitulo}>Front end developer</h3>
+                <h3 className={classes.textoTitulo}>UI Designer</h3>
               </div>
               <p className={classes.textoContenedores2}>
                 Ademas de realizar la programacion de la pagina, tambien me

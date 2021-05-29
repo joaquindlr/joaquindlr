@@ -36,9 +36,81 @@ const Header = () => {
                     height: "100vh",
                     width: "100vw",
                     position: "fixed",
-                    transition: "height 1s",
                   }}
-                ></div>
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      placeItems: "center",
+                      marginTop: "8rem",
+                    }}
+                  >
+                    <Link href="/">
+                      <a
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                          fontSize: "2rem",
+                          fontWeight: 500,
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        Home
+                      </a>
+                    </Link>
+                    <Link href="/">
+                      <a
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                          fontSize: "2rem",
+                          fontWeight: 500,
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        About Me
+                      </a>
+                    </Link>
+                    <Link href="/">
+                      <a
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                          fontSize: "2rem",
+                          fontWeight: 500,
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        Services
+                      </a>
+                    </Link>
+                    <Link href="/">
+                      <a
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                          fontSize: "2rem",
+                          fontWeight: 500,
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        Works
+                      </a>
+                    </Link>
+                    <Link href="/">
+                      <a
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                          fontSize: "2rem",
+                          fontWeight: 500,
+                        }}
+                      >
+                        Contact
+                      </a>
+                    </Link>
+                  </div>
+                </div>
               </>
             )}
           </>
