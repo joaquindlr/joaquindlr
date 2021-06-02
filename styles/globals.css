@@ -1,16 +1,21 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@keyframes levi {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-30px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+.levitate {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
+  transform: translatey(0px);
+  animation: levi 6s ease-in-out infinite;
 }

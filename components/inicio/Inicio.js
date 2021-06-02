@@ -50,10 +50,12 @@ const Body = () => {
                   }
             }
           >
-            <img
-              style={!matches ? { width: "80%" } : null}
-              src="/img/hero2.e4960f19.svg"
-            />
+            <div className="levitate">
+              <img
+                style={!matches ? { width: "80%" } : null}
+                src="/img/hero2.e4960f19.svg"
+              />
+            </div>
           </div>
         </div>
       </div>
