@@ -1,9 +1,8 @@
 import Styles from "./InicioStyles";
 import Header from "../header";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Link from "next/link";
-
 import { useEffect } from "react";
+import Estilos from "./stylesCss";
 
 const Body = () => {
   const classes = Styles({});
@@ -15,6 +14,7 @@ const Body = () => {
 
   return (
     <div>
+      <Estilos />
       <div className={classes.fondoPrincipal}>
         <Header />
         <div style={matches ? { display: "flex" } : null}>

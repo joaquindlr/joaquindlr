@@ -4,8 +4,9 @@ import HeaderStyles from "./HeaderStyles";
 import Link from "next/link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
+import Close from "@material-ui/icons/Close";
+import Collapse from "@material-ui/core/Collapse";
 
 const Header = () => {
   const classes = HeaderStyles();
@@ -17,6 +18,17 @@ const Header = () => {
   const [works, setWorks] = useState(false);
   const [contact, setContact] = useState(false);
   const [open, setOpen] = useState(false);
+  const [links, setLinks] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+    if (links) {
+      setLinks(false);
+    }
+    setTimeout(function () {
+      setLinks(true);
+    }, 0);
+  };
 
   return (
     <>
@@ -24,7 +36,7 @@ const Header = () => {
         {matches ? (
           <>
             <MenuIcon
-              onClick={() => setOpen(!open)}
+              onClick={() => handleOpen()}
               style={{ fontSize: "3rem" }}
             />
             {open && (
@@ -32,84 +44,99 @@ const Header = () => {
                 <div
                   style={{
                     backgroundColor: "#474555",
-                    marginTop: "3rem",
                     height: "100vh",
                     width: "100vw",
                     position: "fixed",
+                    zIndex: 1,
                   }}
                 >
                   <div
                     style={{
-                      display: "grid",
-                      placeItems: "center",
-                      marginTop: "8rem",
+                      display: "flex",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    <Link href="/">
-                      <a
-                        style={{
-                          color: "white",
-                          textDecoration: "none",
-                          fontSize: "2rem",
-                          fontWeight: 500,
-                          marginBottom: "1rem",
-                        }}
-                      >
-                        Home
-                      </a>
-                    </Link>
-                    <Link href="/">
-                      <a
-                        style={{
-                          color: "white",
-                          textDecoration: "none",
-                          fontSize: "2rem",
-                          fontWeight: 500,
-                          marginBottom: "1rem",
-                        }}
-                      >
-                        About Me
-                      </a>
-                    </Link>
-                    <Link href="/">
-                      <a
-                        style={{
-                          color: "white",
-                          textDecoration: "none",
-                          fontSize: "2rem",
-                          fontWeight: 500,
-                          marginBottom: "1rem",
-                        }}
-                      >
-                        Services
-                      </a>
-                    </Link>
-                    <Link href="/">
-                      <a
-                        style={{
-                          color: "white",
-                          textDecoration: "none",
-                          fontSize: "2rem",
-                          fontWeight: 500,
-                          marginBottom: "1rem",
-                        }}
-                      >
-                        Works
-                      </a>
-                    </Link>
-                    <Link href="/">
-                      <a
-                        style={{
-                          color: "white",
-                          textDecoration: "none",
-                          fontSize: "2rem",
-                          fontWeight: 500,
-                        }}
-                      >
-                        Contact
-                      </a>
-                    </Link>
+                    <Close
+                      onClick={() => handleOpen()}
+                      style={{
+                        fontSize: "3rem",
+                      }}
+                    />
                   </div>
+                  <Collapse in={links} timeout="auto">
+                    <div
+                      style={{
+                        display: "grid",
+                        placeItems: "center",
+                        marginTop: "8rem",
+                      }}
+                    >
+                      <Link href="/">
+                        <a
+                          style={{
+                            color: "white",
+                            textDecoration: "none",
+                            fontSize: "2rem",
+                            fontWeight: 500,
+                            marginBottom: "1rem",
+                          }}
+                        >
+                          Home
+                        </a>
+                      </Link>
+                      <Link href="/">
+                        <a
+                          style={{
+                            color: "white",
+                            textDecoration: "none",
+                            fontSize: "2rem",
+                            fontWeight: 500,
+                            marginBottom: "1rem",
+                          }}
+                        >
+                          About Me
+                        </a>
+                      </Link>
+                      <Link href="/">
+                        <a
+                          style={{
+                            color: "white",
+                            textDecoration: "none",
+                            fontSize: "2rem",
+                            fontWeight: 500,
+                            marginBottom: "1rem",
+                          }}
+                        >
+                          Services
+                        </a>
+                      </Link>
+                      <Link href="/">
+                        <a
+                          style={{
+                            color: "white",
+                            textDecoration: "none",
+                            fontSize: "2rem",
+                            fontWeight: 500,
+                            marginBottom: "1rem",
+                          }}
+                        >
+                          Works
+                        </a>
+                      </Link>
+                      <Link href="/">
+                        <a
+                          style={{
+                            color: "white",
+                            textDecoration: "none",
+                            fontSize: "2rem",
+                            fontWeight: 500,
+                          }}
+                        >
+                          Contact
+                        </a>
+                      </Link>
+                    </div>
+                  </Collapse>
                 </div>
               </>
             )}

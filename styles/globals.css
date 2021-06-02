@@ -1,4 +1,4 @@
-@keyframes levi {
+/* @keyframes levi {
   0% {
     transform: translatey(0px);
   }
@@ -18,4 +18,4 @@
   overflow: hidden;
   transform: translatey(0px);
   animation: levi 6s ease-in-out infinite;
-}
+} */
